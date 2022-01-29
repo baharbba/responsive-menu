@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+nav{
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 8vh;
+background-color: aqua;
+color: rgb(77, 29, 29);
+}
+.nav-logo{
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.mid-nav{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.mid-nav a{
+    color: rgb(224, 58, 58);
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer
+}
+
+.burger .line1,
+.burger .line2,
+.burger .line3{
+    width: 24px;
+    height: 3px;
+    background-color: rgb(82, 28, 58);
+}
+
+.burger .line2{
+    margin: 3px 0px;
+}
+
+@media screen and (max-width: 768px){
+    body{
+        overflow-x:hidden ;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    .mid-nav{
+        position:absolute;
+        top: 8vh;
+        right: 0;
+        width: 60%;
+        height: 92vh;
+        display: flex;
+        flex-direction: column;
+        background-color: aqua;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: .5s ease;
+    }
+    .mid-nav li{
+        opacity: 1;
+    }
+
+}
+
+.nav-active{
+    transform: translateX(0);
+}
+
+@keyframes linksFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px)
+        
+    }
+}
